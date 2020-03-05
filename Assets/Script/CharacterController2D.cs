@@ -125,9 +125,9 @@ public class CharacterController2D : MonoBehaviour
 			}
 		}
 		// If the player should jump...
-		Debug.Log("suelo: "+m_Grounded+"  salto:"+ jump);
 		if (m_Grounded && jump)
 		{
+
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
@@ -141,8 +141,11 @@ public class CharacterController2D : MonoBehaviour
 		m_FacingRight = !m_FacingRight;
 
 		// Multiply the player's x local scale by -1.
-		Vector3 theScale = transform.localScale;
+		/*Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
-		transform.localScale = theScale;
+		transform.localScale = theScale;*/
+		transform.Rotate(0f, 180f, 0f);
+
+
 	}
 }

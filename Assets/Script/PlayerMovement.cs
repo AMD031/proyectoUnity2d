@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
 	public CharacterController2D controller;
-	//public Animator animator;
+	public Animator animator;
 
 	public float runSpeed = 40f;
 
@@ -15,36 +15,75 @@ public class PlayerMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		ActivateRun();
+		ActivateJump();
+		Activatefire();
 
+	}
+
+
+
+
+
+	void ActivateRun()
+	{
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-		//animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+		animator.SetFloat("speed", Mathf.Abs(horizontalMove));
 
+	}
+
+
+	void ActivateJump()
+	{
 		if (Input.GetButtonDown("Jump"))
 		{
 			jump = true;
-			//Debug.Log(jump);
-			//animator.SetBool("IsJumping", true);
+			animator.SetBool("jump", jump);
 		}
 
+	}
+
+
+	void ActivateCrouch()
+	{
 		if (Input.GetButtonDown("Crouch"))
 		{
 			crouch = true;
-		} else if (Input.GetButtonUp("Crouch"))
+		}
+		else if (Input.GetButtonUp("Crouch"))
 		{
 			crouch = false;
+		}
+	}
+
+
+
+	 void Activatefire()
+	{
+		if (Input.GetButtonDown("Fire1"))
+		{
+			animator.SetBool("shoot", true);
+		}
+		else if (Input.GetButtonUp("Fire1"))
+		{
+			animator.SetBool("shoot", false);
 		}
 
 	}
 
+
+
+
+
 	public void OnLanding ()
 	{
-		//animator.SetBool("IsJumping", false);
+		animator.SetBool("jump", false);
 	}
 
-	public void OnCrouching (bool isCrouching)
+	/*public void OnCrouching (bool isCrouching)
 	{
 		//animator.SetBool("IsCrouching", isCrouching);
-	}
+	}*/
 
 	void FixedUpdate ()
 	{
