@@ -19,10 +19,10 @@ public class Arrow : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy")
         {
-            rb.velocity =Vector2.zero;
+            //rb.velocity =Vector2.zero;
             collision.gameObject.GetComponent<HealthEnemy>().TakeDamege(50);
-            // StartCoroutine(DestroyObject(1.0f));
-            Destroy(gameObject);
+            StartCoroutine(DestroyObject(9.0f));
+
         }
        
      

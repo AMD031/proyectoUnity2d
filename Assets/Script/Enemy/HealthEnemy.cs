@@ -24,7 +24,8 @@ public class HealthEnemy : MonoBehaviour
     public void Die()
     {
         //Instantiate(null ,transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        GameObject parent =   gameObject.transform.parent.gameObject;
+        Destroy(parent);
     }
 
 
