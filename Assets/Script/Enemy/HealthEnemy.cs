@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class HealthEnemy : MonoBehaviour
 {
- 
+    public  SpriteRenderer spriteRenderer;
 
     public int health =100;
     
     public void TakeDamege(int damage)
     {
         health -= damage;
+        this.spriteRenderer.color = new Color(0,150,0,50);
 
         if (health<=0)
         {

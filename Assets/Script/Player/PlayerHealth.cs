@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-
 	public int maxHealth = 100;
 	public int currentHealth;
 	private bool isEnemyNear = false;
-
 	public HealthBar healthBar;
 
     // Start is called before the first frame update
@@ -22,7 +20,6 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
 		enemyNear();
-
     }
 
 	public void enemyNear()
@@ -46,7 +43,6 @@ public class PlayerHealth : MonoBehaviour
 		{
 			this.isEnemyNear = true;
 		}
-		
 	}
 
 
@@ -61,6 +57,5 @@ public class PlayerHealth : MonoBehaviour
 		yield return new WaitForSeconds(0.50f);
 		currentHealth -= damage;
 		healthBar.SetHealth(currentHealth);
-
 	}
 }
