@@ -6,12 +6,11 @@ using UnityEngine.SceneManagement;
 public class DeathZone : MonoBehaviour
 {
     public GameObject magicFire;
+    public float v =0;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag =="player")
         {
-
-            Debug.Log("entra");
             GameObject player = collision.gameObject;
             StartCoroutine(die(player));
         }
@@ -24,7 +23,7 @@ public class DeathZone : MonoBehaviour
         Transform transform = player.gameObject.transform;
         if (magicFire !=null)
         {
-            Instantiate(magicFire, transform.position, Quaternion.identity);
+            Instantiate(magicFire, transform.position +(Vector3.down*v), Quaternion.identity);
         }
 
         player.SetActive(false);
