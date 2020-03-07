@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
@@ -45,6 +46,7 @@ public class HealthBar : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         player.SetActive(false);
+        SceneManager.LoadScene("Level1");
     }
 
 
