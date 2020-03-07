@@ -54,7 +54,7 @@ public class PlayerHealth : MonoBehaviour
 
 	IEnumerator TakeDamage(int damage)
 	{
-		yield return new WaitForSeconds(0.50f);
+		yield return new WaitForSeconds(1f);
 		currentHealth -= damage;
 		healthBar.SetHealth(currentHealth);
 	}
