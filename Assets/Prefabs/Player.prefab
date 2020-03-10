@@ -245,6 +245,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8178015370923980208, guid: 63ae8479036d2ec42a1a1516b087b342,
     type: 3}
   fireDelta: 0.5
+  shoot: {fileID: 0}
 --- !u!114 &90463213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f0baf92fc17bc4492bf1b07b07658c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 300
   currentHealth: 0
   healthBar: {fileID: 0}
 --- !u!1 &5318735172145003700
