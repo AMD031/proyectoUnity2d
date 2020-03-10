@@ -51,6 +51,13 @@ public class PlayerHealth : MonoBehaviour
 		this.isEnemyNear = false;
 	}
 
+	public void TakeDamage2(int damage)
+	{
+		currentHealth -= damage;
+		healthBar.SetHealth(currentHealth);
+
+	}
+
 
 	IEnumerator TakeDamage(int damage)
 	{
